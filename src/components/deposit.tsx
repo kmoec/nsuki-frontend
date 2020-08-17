@@ -15,17 +15,17 @@ const DepositReact:React.FC<>= (props) => {
 
   return <>
       <Form>
-          <div class="ui grid">
-              <div class="row left aligned">
-                  <div class="fifteen wide column">
+          <div className="ui grid">
+              <div className="row left aligned">
+                  <div className="fifteen wide column">
                       <Header as='h3' textAlign='left'>Does this service require a deposit?</Header>
                   </div>
               </div>
-              <div class="row">
-                  <div class="centered fifteen wide column">
-                      <div class="fluid big ui buttons">
+              <div className="row">
+                  <div className="centered fifteen wide column">
+                      <div className="fluid big ui buttons">
                           { inputBoxType == 0 &&
-                              <button class="ui active button"
+                              <button className="ui active button"
                                     onClick={e => {
                                         props.dataOnChange({fieldName: "Deposit", value: "NoDeposit"});
                                         setInputBoxType(0);
@@ -34,7 +34,7 @@ const DepositReact:React.FC<>= (props) => {
                                     No Deposit</button>
                           }
                           { inputBoxType != 0 &&
-                              <button class="ui button"
+                              <button className="ui button"
                                     onClick={e => {
                                         props.dataOnChange({fieldName: "Deposit", value: "NoDeposit"});
                                         setInputBoxType(0);
@@ -43,7 +43,7 @@ const DepositReact:React.FC<>= (props) => {
                                     No Deposit</button>
                           }
                           { inputBoxType != 1 &&
-                              <button class="ui button"
+                              <button className="ui button"
                                       onClick={e => {
                                           props.dataOnChange({fieldName: "Fixed", value: "Fixed"});
                                           setInputBoxType(1);
@@ -52,7 +52,7 @@ const DepositReact:React.FC<>= (props) => {
                                       Fixed</button>
                           }
                           { inputBoxType == 1 &&
-                              <button class="ui active button"
+                              <button className="ui active button"
                                       onClick={e => {
                                           props.dataOnChange({fieldName: "Fixed", value: "Fixed"});
                                           setInputBoxType(1);
@@ -61,7 +61,7 @@ const DepositReact:React.FC<>= (props) => {
                                       Fixed</button>
                           }
                           { inputBoxType != 2 &&
-                              <button class="ui button"
+                              <button className="ui button"
                                     onClick={e => {
                                         props.dataOnChange({fieldName: "Percentage", value: "Percentage"});
                                         setInputBoxType(2);
@@ -70,7 +70,7 @@ const DepositReact:React.FC<>= (props) => {
                                     Percentage</button>
                           }
                           { inputBoxType == 2 &&
-                              <button class="ui active button"
+                              <button className="ui active button"
                                     onClick={e => {
                                         props.dataOnChange({fieldName: "Percentage", value: "Percentage"});
                                         setInputBoxType(2);
@@ -81,9 +81,9 @@ const DepositReact:React.FC<>= (props) => {
                       </div>
                   </div>
               </div>
-              <div class="row"></div>
-              <div class="centered row">
-                  <div class="seven wide column centered aligned">
+              <div className="row"></div>
+              <div className="centered row">
+                  <div className="seven wide column centered aligned">
                     {/* Based on curent group button selection, we are showing different type of inputbox */}
                     { inputBoxType == 0 &&
                       <Input placeholder='Not Applicable'
