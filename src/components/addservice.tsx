@@ -7,32 +7,141 @@ const serviceLocation = [
   { key: 'AtClientPlace', text: 'Available at client\'s location', value: 'atClientLocation' }
 ]
 
+interface FormFieldData {
+    fieldName: string
+    value: string
+};
+
 const AddServiceReact:React.FC<>= (props) => (
-  <div id="my-container" class="ui grid center middle aligned">
-    <div class="row">
-      <div class="column">
-        <div class="ui text container segment">
+      <Form>
+          <div class="ui grid">
+              <div class="row left aligned">
+                  <div class="fifteen wide column">
+                      <Header as='h3' textAlign='left'>Add your first service</Header>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="eight wide column">
+                      <input placeholder='Appointment Name'
+                             validators={['required']}
+                             errormessages={['this field is required']}
+                             onChange={ e => props.dataOnChange({fieldName: "AppointmentName", value: e.target.value})}/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="eight wide column">
+                      <input placeholder='Duration (Minutes)'
+                             validators={['required']}
+                             errormessages={['this field is required']}
+                             onChange={ e => props.dataOnChange({fieldName: "Duration", value: e.target.value})}/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="eight wide column">
+                      <input placeholder='Price ($100.00)'
+                             validators={['required']}
+                             errormessages={['this field is required']}
+                             onChange={ e => props.dataOnChange({fieldName: "Price", value: e.target.value})}/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="eight wide column">
+                      <input placeholder='Description (Optional)'
+                             onChange={ e => props.dataOnChange({fieldName: "Description", value: e.target.value})}/>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="eight wide column">
+                      <Dropdown
+                        placeholder='Service Location' fluid multiple selection options={serviceLocation}
+                        validators={['required']} errormessages={['this field is required']} />
+                  </div>
+              </div>
+          </div>
+      </Form>
+
+/*  <div id="my-container" className="ui grid center middle aligned">
+    <div className="row">
+      <div className="column">
+        <div className="ui text container">
           <Header as='h3' textAlign='left'>Add your first service</Header>
           <Form>
             <Form.Field>
-              <input placeholder='Appointment Name' validators={['required']} errorMessages={['this field is required']}  />
+              <input placeholder='Appointment Name'
+                     validators={['required']}
+                     errormessages={['this field is required']}
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "AppointmentName", value: e.target.value})}/>
             </Form.Field>
             <Form.Field>
-              <input placeholder='Duration (Minutes)' validators={['required']} errorMessages={['this field is required']}  />
+              <input placeholder='Duration (Minutes)'
+                     validators={['required']}
+                     errormessages={['this field is required']}
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "Duration", value: e.target.value})}/>
             </Form.Field>
             <Form.Field>
-              <input placeholder='Price ($100.00)' validators={['required']} errorMessages={['this field is required']} />
+              <input placeholder='Price ($100.00)'
+                     validators={['required']}
+                     errormessages={['this field is required']}
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "Price", value: e.target.value})}/>
             </Form.Field>
             <Form.Field>
-              <input placeholder='Description (Optional)' />
-            </Form.Field>
-            <Form.Field>
-              <input placeholder='Description (Optional)' />
+              <input placeholder='Description (Optional)'
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "Description", value: e.target.value})}/>
             </Form.Field>
             <Form.Field>
               <Dropdown
                 placeholder='Service Location' fluid multiple selection options={serviceLocation}
-                validators={['required']} errorMessages={['this field is required']} />
+                validators={['required']} errormessages={['this field is required']} />
+            </Form.Field>
+          </Form>
+        </div>
+      </div>
+    </div>
+  </div>*/
+  )
+
+/*
+const AddServiceReact:React.FC<>= (props) => (
+  <div id="my-container" className="ui grid center middle aligned">
+    <div className="row">
+      <div className="column">
+        <div className="ui text container">
+          <Header as='h3' textAlign='left'>Add your first service</Header>
+          <Form>
+            <Form.Field>
+              <input placeholder='Appointment Name'
+                     validators={['required']}
+                     errormessages={['this field is required']}
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "AppointmentName", value: e.target.value})}/>
+            </Form.Field>
+            <Form.Field>
+              <input placeholder='Duration (Minutes)'
+                     validators={['required']}
+                     errormessages={['this field is required']}
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "Duration", value: e.target.value})}/>
+            </Form.Field>
+            <Form.Field>
+              <input placeholder='Price ($100.00)'
+                     validators={['required']}
+                     errormessages={['this field is required']}
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "Price", value: e.target.value})}/>
+            </Form.Field>
+            <Form.Field>
+              <input placeholder='Description (Optional)'
+                     width={12}
+                     onChange={ e => props.dataOnChange({fieldName: "Description", value: e.target.value})}/>
+            </Form.Field>
+            <Form.Field>
+              <Dropdown
+                placeholder='Service Location' fluid multiple selection options={serviceLocation}
+                validators={['required']} errormessages={['this field is required']} />
             </Form.Field>
           </Form>
         </div>
@@ -40,5 +149,9 @@ const AddServiceReact:React.FC<>= (props) => (
     </div>
   </div>
   )
+
+
+*/
+
 
 export default AddServiceReact
