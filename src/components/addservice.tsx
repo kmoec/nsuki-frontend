@@ -31,6 +31,7 @@ const AddServiceReact:React.FC<>= (props) => (
               <div className="row">
                   <div className="eight wide column">
                       <input placeholder='Duration (Minutes)'
+                             type='number'
                              validators={['required']}
                              errormessages={['this field is required']}
                              onChange={ e => props.dataOnChange({fieldName: "Duration", value: e.target.value})}/>
@@ -39,6 +40,7 @@ const AddServiceReact:React.FC<>= (props) => (
               <div className="row">
                   <div className="eight wide column">
                       <input placeholder='Price ($100.00)'
+                             type='number'
                              validators={['required']}
                              errormessages={['this field is required']}
                              onChange={ e => props.dataOnChange({fieldName: "Price", value: e.target.value})}/>
@@ -63,5 +65,6 @@ const AddServiceReact:React.FC<>= (props) => (
       </Form>
 
   )
+
 
 export default AddServiceReact

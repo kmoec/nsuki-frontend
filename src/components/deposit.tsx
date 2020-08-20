@@ -100,6 +100,7 @@ const DepositReact:React.FC<>= (props) => {
                     { inputBoxType == 1 &&
                       <Input focus
                              placeholder='Deposit Amount'
+                             type='number'
                              labelPosition='right'
                              validators={['required']}
                              errormessages={['this field is required']}
@@ -112,6 +113,7 @@ const DepositReact:React.FC<>= (props) => {
                     { inputBoxType == 2 &&
                       <Input focus
                              placeholder='Deposit Percentage'
+                             type='number'
                              labelPosition='right'
                              validators={['required']}
                              errormessages={['this field is required']}
