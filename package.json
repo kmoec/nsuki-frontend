@@ -37,7 +37,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "semantic-ui": "^2.4.2",
+    "semantic-ui": "^2.5.0",
     "semantic-ui-react": "^0.88.2",
     "semantic-ui-react-form-validator": "^1.0.2"
   }
